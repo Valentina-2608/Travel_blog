@@ -3,7 +3,7 @@
 .main{
     width:100%;
     max-width: 1200px;
-    height:1500px;
+    height:1200px;
     position:relative;
     margin:0 auto;
     background-color:lightgray;
@@ -72,7 +72,7 @@ a{color:#F8F8F8;
     border-radius: 10px;
     position:absolute;
     top:300px;
-    left:650px;
+    left:55%;
     z-index:7;}
 
 
@@ -104,7 +104,7 @@ a{color:#F8F8F8;
     border-radius: 10px;
     position:absolute;
     top:305px;
-    left:655px;
+    left:55.5%;
     z-index:5;
 }
             
