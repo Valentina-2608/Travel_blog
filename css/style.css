@@ -56,3 +56,12 @@ a{color:#F8F8F8;
     font-size:22px;
     font-family: Garamond;
     text-decoration:none;}
+
+
+.main_image{width:100%;
+    height:630px;
+    position:absolute;
+    top:206px;
+    left:0px;}
+
+.main_image>img{width:100%;}
