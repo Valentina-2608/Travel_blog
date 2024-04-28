@@ -337,3 +337,16 @@ input:focus{
 #btn_log_in:hover{
 	cursor: pointer;
 }
+
+
+.info{width:30%;
+height:100px;
+position:absolute;
+top:35px;
+font-size:20px;
+left:2%;}
+
+.info a{
+    color:darkred;
+    font-weight: bold;
+}
