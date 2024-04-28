@@ -177,3 +177,14 @@ footer>p{
     margin-left:5%;
     font-family:Garamond;
 }
+
+/* Login Page */
+
+.main1{
+    width:100%;
+    max-width: 1200px;
+    height:800px;
+    position:relative;
+    margin:0 auto;
+    background-color:lightgray;
+}
