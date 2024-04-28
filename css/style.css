@@ -226,3 +226,23 @@ footer>p{
     text-decoration: underline;
     color:black;
 }
+
+
+.container{
+    width:100%;
+    height:700px;
+    position:absolute;
+    top:100px;
+    left:0px;
+}
+
+.text3{
+    width:100%;
+    height:100px;
+    position:absolute;
+    top:50px;
+    left:0px;
+    text-align:center;
+    font-size:28px;
+    font-family: Garamond;
+}
