@@ -350,3 +350,15 @@ left:2%;}
     color:darkred;
     font-weight: bold;
 }
+
+.login_image{
+    width:50%;
+    height:300px;
+    position: absolute;
+    top:300px;
+    left:50%;
+}
+
+.login_image img{
+    width:100%;
+}
