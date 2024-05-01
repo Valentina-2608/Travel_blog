@@ -396,3 +396,32 @@ left:2%;}
     text-decoration: underline;
     color:black;
 }
+
+
+#form_sign{
+    width:50%;
+    height:300px;
+    background-color:gray;
+    border-radius:20px;
+    position:absolute;
+    top:150px;
+    left:25%;
+}
+
+#btn_sign_up{
+	width:20%;
+	padding:1%;
+    background-color:darkred;
+    color:white;
+	font-weight: bold;
+	border:none;
+	font-size:18px;
+	border-radius: 8px;
+    position:absolute;
+    top:0px;
+    left:15%;
+}
+
+#btn_sign_up:hover{
+	cursor: pointer;
+}
