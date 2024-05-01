@@ -425,3 +425,17 @@ left:2%;}
 #btn_sign_up:hover{
 	cursor: pointer;
 }
+
+
+.sign_image{
+    width:50%;
+    height:300px;
+    position: absolute;
+    top:360px;
+    left:10%;
+}
+
+.sign_image img{
+    width:60%;
+}
+
