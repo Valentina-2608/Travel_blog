@@ -362,3 +362,37 @@ left:2%;}
 .login_image img{
     width:100%;
 }
+
+
+
+/* Sign Up Page */
+.signup_caption{
+    width:60%;
+    height:50px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size:35px;
+    font-weight:bold;
+    color:darkred;
+   
+    text-align:center;
+    float:left;
+
+}
+
+
+.signup_text{
+    width:40%;
+    height:50px;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    font-size:24px;
+    float:left;
+    color:black;
+    font-weight: bold;
+}
+
+.signup_text a{
+    text-decoration: underline;
+    color:black;
+}
