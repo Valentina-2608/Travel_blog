@@ -301,23 +301,6 @@ input:focus{
     top:190px;
     left:0px;
 }
-#btn_clear{
-	width:20%;
-	padding:1%;
-	background-color:darkred;
-	font-weight: bold;
-    color:white;
-	border:none;
-	font-size:18px;
-	border-radius: 8px;
-    position:absolute;
-    top:0px;
-    left:55%;
-}
-
-#btn_clear:hover{
-	cursor: pointer;
-}
 
 
 #btn_log_in{
@@ -338,6 +321,25 @@ input:focus{
 	cursor: pointer;
 }
 
+#btn_clear{
+	width:20%;
+	padding:1%;
+	background-color:darkred;
+	font-weight: bold;
+    color:white;
+	border:none;
+	font-size:18px;
+	border-radius: 8px;
+    position:absolute;
+    top:0px;
+    left:55%;
+}
+
+#btn_clear:hover{
+	cursor: pointer;
+}
+
+
 
 .info{width:30%;
 height:100px;
@@ -355,7 +357,7 @@ left:2%;}
     width:50%;
     height:300px;
     position: absolute;
-    top:300px;
+    top:430px;
     left:50%;
 }
 
@@ -425,6 +427,7 @@ left:2%;}
 #btn_sign_up:hover{
 	cursor: pointer;
 }
+
 
 
 .sign_image{
