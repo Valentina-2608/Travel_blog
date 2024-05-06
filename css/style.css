@@ -442,3 +442,16 @@ left:2%;}
     width:60%;
 }
 
+
+
+/* Travel tips */
+
+.logo2{width:20%;
+    height:120px;
+    position:absolute;
+    top:0px;
+    left:0px;}
+
+.logo2>img{
+    width:82%;
+}
