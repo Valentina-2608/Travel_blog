@@ -473,3 +473,23 @@ left:0px;}
     
 .image_tips>img{width:100%;
     opacity:0.5;}
+
+
+.tips{width:40%;
+    height:525px;
+    border:5px solid brown;
+    border-radius: 10px;
+    position:absolute;
+    top:100px;
+    left:55%;
+}
+    
+.list{width:100%;}
+ 
+.list>li{width:90%;
+font-size:20px;
+text-align:left;
+margin-top:10px;
+margin-left:-10px;
+font-weight:bold;
+font-family:Garamond;}
