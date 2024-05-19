@@ -493,3 +493,19 @@ margin-top:10px;
 margin-left:-10px;
 font-weight:bold;
 font-family:Garamond;}
+
+
+
+
+
+/* posts.html */
+
+.posts_main{
+    width:100%;
+    max-width: 1200px;
+    height:2000px;
+    position:relative;
+    margin:0 auto;
+    background-color:#F8F8F8;
+    font-family:Garamond;
+}
