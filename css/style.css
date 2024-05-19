@@ -539,3 +539,80 @@ font-family:Garamond;}
 #btn_log_out:hover{
 	cursor: pointer;
 }
+
+
+
+#post_form{
+    width:70%;
+    height:420px;
+    background-color:gray;
+    border-radius:20px;
+    position:absolute;
+    top:150px;
+    left:15%;
+}
+
+#title{margin-top:20px;}
+.form_input{
+    margin-top:20px;
+}
+
+#post_content{
+    margin-left:10%;
+    margin-top:20px;
+    border:none;
+    outline: none;
+    border-radius:8px;
+}
+
+textarea::placeholder{
+    color:black;
+    padding-left: 20px;
+}
+
+
+
+.post_buttons{
+    width:80%;
+    position:absolute;
+    top:350px;
+    left:10%;
+}
+
+
+
+#post_btn{
+	width:20%;
+	padding:1%;
+    background-color:darkred;
+    color:white;
+	font-weight: bold;
+	border:none;
+	font-size:18px;
+	border-radius: 8px;
+    position:absolute;
+    top:0px;
+    left:15%;
+}
+
+#post_btn:hover{
+	cursor: pointer;
+}
+
+#update_btn{
+	width:20%;
+	padding:1%;
+    background-color:lightgray;
+	font-weight: bold;
+    color:black;
+	border:none;
+	font-size:18px;
+	border-radius: 8px;
+    position:absolute;
+    top:0px;
+    left:55%;
+}
+
+#update_btn:hover{
+	cursor: pointer;
+}
