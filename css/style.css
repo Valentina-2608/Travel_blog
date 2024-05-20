@@ -616,3 +616,13 @@ textarea::placeholder{
 #update_btn:hover{
 	cursor: pointer;
 }
+
+
+.my_content{
+    width:80%;
+    height:600px;
+    background-color:yellow;
+    position:absolute;
+    top:650px;
+    left:10%;
+}
