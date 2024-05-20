@@ -42,7 +42,7 @@
           .then(() => {
           // Data saved successfully!
         alert('User was created successfully')
-        window.location.replace("travel_blog.html");
+        window.location.replace("posts.html");
         })
         .catch((error) => {
           // The write failed...
