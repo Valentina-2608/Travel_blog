@@ -42,5 +42,14 @@
        alert('Error')
     });
     event.preventDefault();
-    
+  }
+
+
+  let clear_btn=document.getElementById('clear_btn');
+  clear_btn.addEventListener('click', clearPost)
+  function clearPost(){
+    let title=document.getElementById('title');
+    let post_content=document.getElementById('post_content');
+    title.value='';
+    post_content.value='';
   }
