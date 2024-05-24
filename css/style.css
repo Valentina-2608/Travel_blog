@@ -600,7 +600,7 @@ textarea::placeholder{
 	cursor: pointer;
 }
 
-#update_btn{
+#clear_btn{
 	width:20%;
 	padding:1%;
     background-color:lightgray;
@@ -614,7 +614,7 @@ textarea::placeholder{
     left:55%;
 }
 
-#update_btn:hover{
+#clear_btn:hover{
 	cursor: pointer;
 }
 
