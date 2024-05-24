@@ -558,7 +558,8 @@ font-family:Garamond;}
 }
 
 #post_content{
-    margin-left:10%;
+    width:80%;
+    margin-left:5%;
     margin-top:20px;
     border:none;
     outline: none;
