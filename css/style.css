@@ -503,7 +503,7 @@ font-family:Garamond;}
 .posts_main{
     width:100%;
     max-width: 1200px;
-    height:3700px;
+    height:3900px;
     position:relative;
     margin:0 auto;
     background-color:#F8F8F8;
@@ -621,7 +621,7 @@ textarea::placeholder{
 
 .my_content{
     width:80%;
-    height:2900px;
+    height:3100px;
     position:absolute;
     top:650px;
     left:10%;
