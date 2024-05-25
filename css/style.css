@@ -643,6 +643,8 @@ padding-top:10px;
 padding-bottom: 10px;
 font-size:22px;
 background-color: white;
+color:darkred;
+font-weight: bold;
 text-align: center;}
 
 .new_post_content{
