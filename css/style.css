@@ -556,7 +556,6 @@ font-family:Garamond;}
 .form_input{
     margin-top:20px;
 }
-
 #post_content{
     width:80%;
     margin-left:5%;
@@ -623,7 +622,7 @@ textarea::placeholder{
     width:80%;
     height:3100px;
     position:absolute;
-    top:650px;
+    top:800px;
     left:10%;
 }
 
@@ -654,28 +653,28 @@ text-align: center;}
     padding:1%;
 }
 
+
 .update_btn{padding:5px;
-margin:10px;
-background-color: darkblue;
-border:none;
-color:white;
-font-size:16px;
-border-radius: 2px;}
-
+    margin:10px;
+    background-color: darkblue;
+    border:none;
+    color:white;
+    font-size:16px;
+    border-radius: 5px;}
+    
 .update_btn:hover{cursor: pointer;}
-
-
-
-
+    
 .delete_btn{padding:5px;
     margin:10px;
     background-color:darkred;
     border:none;
     color:white;
     font-size:16px;
-    border-radius: 2px;}
+    border-radius: 5px;}
     
 .delete_btn:hover{cursor: pointer;}
+
+
 
 
 
