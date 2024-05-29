@@ -3,7 +3,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 
-  import { getFirestore, collection, addDoc, onSnapshot} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, doc,onSnapshot,deleteDoc} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,6 +23,7 @@
   const db = getFirestore(app);
   const dbRef = collection(db, 'Posts')
 
+
   let my_content=document.querySelector('my_content');
   let post_btn=document.getElementById('post_btn');
   post_btn.addEventListener('click', addPost);
@@ -33,7 +34,7 @@
     const dbRef = collection(db, 'Posts')
     const data = {
         title: title.value,
-        post_content:post_content.value
+        post_content:post_content.value,
       };
      addDoc(dbRef, data)
       .then(()=>{
@@ -59,11 +60,10 @@
 
     onSnapshot(dbRef, docsSnap => {
       docsSnap.forEach(doc => {
-        console.log(doc.data().title);
-        console.log(doc.data().post_content);
         let my_content=document.querySelector('.my_content');
         let new_post = document.createElement('div');
-        new_post.classList.add('new_post')
+        new_post.setAttribute("data-id",doc.id);
+        console.log(doc.id)
   
         let new_post_title = document.createElement('div');
         new_post_title.classList.add('new_post_title')
@@ -75,21 +75,44 @@
 
         let update_btn=document.createElement('button');
         update_btn.classList.add('update_btn');
-        update_btn.innerHTML='Update';
+        update_btn.innerHTML = 'Update post';
 
         let delete_btn=document.createElement('button');
-        delete_btn.classList.add('delete_btn');
-        delete_btn.innerHTML='Delete';
-        
+        delete_btn.classList.add('delete_btn'); 
+        delete_btn.innerHTML = 'Delete post';
+
         new_post.appendChild(new_post_title);
         new_post.appendChild(new_post_content);
         new_post.appendChild(update_btn);
         new_post.appendChild(delete_btn);
-
         my_content.appendChild(new_post);
 
+        let delete_btns = document.querySelectorAll('.delete_btn');
+        for(let i=0; i< delete_btns.length; i++){
+           delete_btns[i].addEventListener('click',deletePost);
+        }
 
 
+       
       })
     })
   
+   
+    function deletePost(event){
+      event.stopPropagation();
+      let delete_btn=event.target;
+      let delete_btn_parent = delete_btn.parentElement;
+      let id=delete_btn_parent.getAttribute("data-id");
+      const dbRef=doc(db, 'Posts',id);
+      deleteDoc(dbRef)
+      .then(()=>{
+        alert('Post was deleted successfully')
+     })
+      .catch((error)=>{
+       alert('Error')
+    });
+      
+      
+
+
+    }
