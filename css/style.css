@@ -565,7 +565,7 @@ font-family:Garamond;}
     border-radius:8px;
 }
 
-textarea::placeholder{
+#post_content::placeholder{
     color:black;
     padding-left: 20px;
 }
@@ -593,11 +593,32 @@ textarea::placeholder{
     position:absolute;
     top:0px;
     left:15%;
+    display:block;
 }
 
 #post_btn:hover{
 	cursor: pointer;
 }
+
+#update_button{
+	width:20%;
+	padding:1%;
+    background-color:darkgreen;
+    color:white;
+	font-weight: bold;
+	border:none;
+	font-size:18px;
+	border-radius: 8px;
+    position:absolute;
+    top:0px;
+    left:15%;
+    display:none;
+}
+
+#update_button:hover{
+	cursor: pointer;
+}
+
 
 #clear_btn{
 	width:20%;
@@ -643,10 +664,11 @@ font-size:22px;
 background-color: white;
 color:darkred;
 font-weight: bold;
-text-align: center;}
+text-align: center;
+border:none;}
 
 .new_post_content{
-    width:98,5%;
+    width:99%;
     height:140px;
     background-color: white;
     font-size:20px;
