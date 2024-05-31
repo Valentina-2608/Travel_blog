@@ -3,7 +3,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 
-  import { getFirestore, collection, addDoc, doc,onSnapshot,deleteDoc} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, doc,onSnapshot,deleteDoc, updateDoc} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -92,6 +92,10 @@
            delete_btns[i].addEventListener('click',deletePost);
         }
 
+        let update_btns = document.querySelectorAll('.update_btn');
+        for(let i=0; i< update_btns.length; i++){
+           update_btns[i].addEventListener('click', updatePost);
+        }
 
        
       })
@@ -116,3 +120,6 @@
 
 
     }
+
+
+  
