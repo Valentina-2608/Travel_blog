@@ -65,13 +65,14 @@
         new_post.setAttribute("data-id",doc.id);
         console.log(doc.id)
   
-        let new_post_title = document.createElement('div');
+        let new_post_title = document.createElement('input');
         new_post_title.classList.add('new_post_title')
-        new_post_title.innerHTML = doc.data().title;
+        new_post_title.value = doc.data().title;
   
-        let new_post_content = document.createElement('div');
+        let new_post_content = document.createElement('textarea');
         new_post_content.classList.add('new_post_content')
-        new_post_content.innerHTML = doc.data().post_content
+        new_post_content.value = doc.data().post_content
+
 
         let update_btn=document.createElement('button');
         update_btn.classList.add('update_btn');
