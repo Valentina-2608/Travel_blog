@@ -92,11 +92,6 @@
            delete_btns[i].addEventListener('click',deletePost);
         }
 
-        let update_btns = document.querySelectorAll('.update_btn');
-        for(let i=0; i< update_btns.length; i++){
-           update_btns[i].addEventListener('click', updatePost);
-        }
-
        
       })
     })
