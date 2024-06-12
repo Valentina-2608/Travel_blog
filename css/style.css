@@ -638,21 +638,47 @@ font-family:Garamond;}
 	cursor: pointer;
 }
 
+.show_info{width:40%;
+height:100px;
+position:absolute;
+top:750px;
+left:35%;
+}
 
+.caption1{width:50%;
+height:100px;
+font-size:30px;
+float:left;
+}
+
+#show_posts{
+    padding:5px;
+    font-size:20px;
+    border-radius:5px;
+    border:none;
+    background-color: darkgreen;
+    color:white;
+}
+
+
+
+#show_posts:hover{
+    cursor:pointer;
+}
 .my_content{
     width:80%;
     height:3100px;
     position:absolute;
-    top:800px;
+    top:900px;
     left:10%;
 }
 
 
 .new_post{width:100%;
-height:260px;
+height:450px;
 margin-top:20px;
 margin-bottom:20px;
-background-color: #A0A0A0;
+background-color:green;
 border-radius:5px;}
 
 
@@ -695,10 +721,6 @@ border:none;}
     border-radius: 5px;}
     
 .delete_btn:hover{cursor: pointer;}
-
-
-
-
 
 
 /* Travel blog */
