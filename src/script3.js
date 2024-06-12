@@ -44,6 +44,7 @@
        alert('Error')
     });
     event.preventDefault();
+  
   }
 
 
@@ -56,9 +57,12 @@
     post_content.value='';
   }
 
-
-
-    onSnapshot(dbRef, docsSnap => {
+  let show_posts=document.getElementById('show_posts');
+  show_posts.addEventListener('click', showAllPosts)
+  
+  function showAllPosts(){
+  
+  onSnapshot(dbRef, docsSnap => {
       docsSnap.forEach(doc => {
         let my_content=document.querySelector('.my_content');
         let new_post = document.createElement('div');
@@ -82,6 +86,8 @@
         delete_btn.classList.add('delete_btn'); 
         delete_btn.innerHTML = 'Delete post';
 
+        
+
         new_post.appendChild(new_post_title);
         new_post.appendChild(new_post_content);
         new_post.appendChild(update_btn);
@@ -92,12 +98,15 @@
         for(let i=0; i< delete_btns.length; i++){
            delete_btns[i].addEventListener('click',deletePost);
         }
-
+       
+        setTimeout(()=>{
+          location.reload()
+        },1000)
        
       })
     })
   
-   
+  }
     function deletePost(event){
       event.stopPropagation();
       let delete_btn=event.target;
