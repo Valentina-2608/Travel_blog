@@ -3,7 +3,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 
-  import { getFirestore, collection, addDoc, doc,onSnapshot,deleteDoc, updateDoc} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, doc,onSnapshot} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -44,6 +44,11 @@
        alert('Error')
     });
     event.preventDefault();
+   
+    setTimeout(()=>{
+      location.reload()
+    },1000)
+    
   
   }
 
@@ -57,8 +62,7 @@
     post_content.value='';
   }
 
-  let show_posts=document.getElementById('show_posts');
-  show_posts.addEventListener('click', showAllPosts)
+  
   
   function showAllPosts(){
   
@@ -94,37 +98,14 @@
         new_post.appendChild(delete_btn);
         my_content.appendChild(new_post);
 
-        let delete_btns = document.querySelectorAll('.delete_btn');
-        for(let i=0; i< delete_btns.length; i++){
-           delete_btns[i].addEventListener('click',deletePost);
-        }
-       
-        setTimeout(()=>{
-          location.reload()
-        },1000)
+        
+        
        
       })
     })
-  
+   
+   
   }
-    function deletePost(event){
-      event.stopPropagation();
-      let delete_btn=event.target;
-      let delete_btn_parent = delete_btn.parentElement;
-      let id=delete_btn_parent.getAttribute("data-id");
-      const dbRef=doc(db, 'Posts',id);
-      deleteDoc(dbRef)
-      .then(()=>{
-        alert('Post was deleted successfully')
-     })
-      .catch((error)=>{
-       alert('Error')
-    });
-      
-      
 
-
-    }
-
-
-  
+ 
+    
