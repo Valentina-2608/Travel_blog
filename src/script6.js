@@ -23,41 +23,6 @@
   const db = getFirestore(app);
   const dbRef = collection(db, 'Posts')
 
-
-  let my_content=document.querySelector('my_content');
-  let post_btn=document.getElementById('post_btn');
-  post_btn.addEventListener('click', addPost);
-
-  function addPost(event){
-    let title=document.getElementById('title');
-    let post_content=document.getElementById('post_content');
-    const dbRef = collection(db, 'Posts')
-    const data = {
-        title: title.value,
-        post_content:post_content.value,
-      };
-     addDoc(dbRef, data)
-      .then(()=>{
-        alert('Post was added successfully')
-     })
-      .catch((error)=>{
-       alert('Error')
-    });
-    event.preventDefault();
-  }
-
-
-  let clear_btn=document.getElementById('clear_btn');
-  clear_btn.addEventListener('click', clearPost)
-  function clearPost(){
-    let title=document.getElementById('title');
-    let post_content=document.getElementById('post_content');
-    title.value='';
-    post_content.value='';
-  }
-
-
-
     onSnapshot(dbRef, docsSnap => {
       docsSnap.forEach(doc => {
         let my_content=document.querySelector('.my_content');
@@ -94,6 +59,11 @@
            update_btns[i].addEventListener('click', updatePost);
         }
 
+
+        let delete_btns = document.querySelectorAll('.delete_btn');
+        for(let i=0; i< delete_btns.length; i++){
+        delete_btns[i].addEventListener('click',deletePost);
+          }
        
       })
     })
@@ -110,6 +80,7 @@
       let post_info = update_btn_parent.children[1].value;
       console.log(post_title);
       console.log(post_info);
+      console.log(update_btn_parent)
       const dbRef=doc(db, 'Posts',id);
       const data={
         title:post_title,
@@ -122,6 +93,32 @@
       .catch((error)=>{
        alert('Error')
     });
-     
+    setTimeout(()=>{
+      location.reload()
+    },1000)
      
 }
+
+
+
+function deletePost(event){
+  event.stopPropagation();
+  let delete_btn=event.target;
+  let delete_btn_parent = delete_btn.parentElement;
+  let id=delete_btn_parent.getAttribute("data-id");
+  
+  const dbRef=doc(db, 'Posts',id);
+  deleteDoc(dbRef)
+  .then(()=>{
+    alert('Post was deleted successfully')
+    })
+  .catch((error)=>{
+   alert('Error')
+  });
+  setTimeout(()=>{
+    location.reload()
+    },1000)
+
+}
+
+
