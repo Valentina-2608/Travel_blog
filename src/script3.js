@@ -45,7 +45,10 @@
        alert('Error')
     });
     event.preventDefault();
-   
+    setTimeout(()=>{
+      location.reload()
+    },1000)
+     
    
   }
 
