@@ -3,7 +3,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 
-  import { getFirestore, collection, addDoc, doc,onSnapshot,deleteDoc, updateDoc} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+  import { getFirestore, collection, doc,onSnapshot,deleteDoc, updateDoc} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,14 +21,14 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  const dbRef = collection(db, 'Posts')
+  const dbRef = collection(db, 'Posts');
 
     onSnapshot(dbRef, docsSnap => {
       docsSnap.forEach(doc => {
         let my_content=document.querySelector('.my_content');
         let new_post = document.createElement('div');
         new_post.setAttribute("data-id",doc.id);
-        console.log(doc.id)
+       
   
         let new_post_title = document.createElement('input');
         new_post_title.classList.add('new_post_title')
@@ -51,9 +51,7 @@
         new_post.appendChild(update_btn);
         new_post.appendChild(delete_btn);
         my_content.appendChild(new_post);
-
        
-
         let update_btns = document.querySelectorAll('.update_btn');
         for(let i=0; i< update_btns.length; i++){
            update_btns[i].addEventListener('click', updatePost);
@@ -82,10 +80,12 @@
       console.log(post_info);
       console.log(update_btn_parent)
       const dbRef=doc(db, 'Posts',id);
+     
       const data={
         title:post_title,
         post_content:post_info
       }
+     
       updateDoc(dbRef,data)
       .then(()=>{
         alert('Post was updated successfully')
@@ -120,5 +120,4 @@ function deletePost(event){
     },1000)
 
 }
-
 
