@@ -89,15 +89,11 @@
         delete_btn.classList.add('delete_btn'); 
         delete_btn.innerHTML = 'Delete post';
 
-       
-        let list_images=document.createElement('div');
-        list_images.classList.add('list_images'); 
-
         new_post.appendChild(new_post_title);
         new_post.appendChild(new_post_content);
         new_post.appendChild(update_btn);
         new_post.appendChild(delete_btn);
-        new_post.appendChild(list_images);
+      
         my_content.appendChild(new_post);
       
         
