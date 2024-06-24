@@ -23,10 +23,10 @@
   const db = getFirestore(app);
   const dbRef = collection(db, 'Posts')
 
+
+
   onSnapshot(dbRef, docsSnap => {
     docsSnap.forEach(doc => {
-      console.log(doc.data().title);
-      console.log(doc.data().post_content);
       let blog_posts=document.querySelector('.blog_posts');
       let new_post = document.createElement('div');
       new_post.classList.add('new_post')
@@ -39,14 +39,13 @@
       new_post_content.classList.add('new_post_content')
       new_post_content.innerHTML = doc.data().post_content
 
-
-      
+    
       new_post.appendChild(new_post_title);
       new_post.appendChild(new_post_content);
 
       blog_posts.appendChild(new_post);
-
-
-
+     
+     
     })
+    
   })
