@@ -3,8 +3,10 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 
-  import { getFirestore, collection, addDoc, doc,onSnapshot} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+  import { getFirestore, collection, addDoc, doc,onSnapshot, setDoc} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
+  import { getStorage, ref, uploadBytes, getDownloadURL} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js";
+ 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,20 +23,19 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-  const dbRef = collection(db, 'Posts')
-
+  const dbRef = collection(db, 'Posts');
+  const storage = getStorage();
 
   let my_content=document.querySelector('my_content');
   let post_btn=document.getElementById('post_btn');
   post_btn.addEventListener('click', addPost);
 
   function addPost(event){
-    let title=document.getElementById('title');
-    let post_content=document.getElementById('post_content');
-    const dbRef = collection(db, 'Posts')
+    let post_btn=event.target;
+    const dbRef = collection(db, 'Posts');
     const data = {
         title: title.value,
-        post_content:post_content.value,
+        post_content:post_content.value
       };
      addDoc(dbRef, data)
       .then(()=>{
@@ -45,11 +46,7 @@
     });
     event.preventDefault();
    
-    setTimeout(()=>{
-      location.reload()
-    },1000)
-    
-  
+   
   }
 
 
@@ -64,14 +61,13 @@
 
   
   
-  function showAllPosts(){
+  
   
   onSnapshot(dbRef, docsSnap => {
       docsSnap.forEach(doc => {
         let my_content=document.querySelector('.my_content');
         let new_post = document.createElement('div');
         new_post.setAttribute("data-id",doc.id);
-        console.log(doc.id)
   
         let new_post_title = document.createElement('input');
         new_post_title.classList.add('new_post_title')
@@ -90,22 +86,26 @@
         delete_btn.classList.add('delete_btn'); 
         delete_btn.innerHTML = 'Delete post';
 
-        
+       
+        let list_images=document.createElement('div');
+        list_images.classList.add('list_images'); 
 
         new_post.appendChild(new_post_title);
         new_post.appendChild(new_post_content);
         new_post.appendChild(update_btn);
         new_post.appendChild(delete_btn);
+        new_post.appendChild(list_images);
         my_content.appendChild(new_post);
-
+      
         
-        
-       
       })
     })
    
    
-  }
 
  
+   
+    
+    
+    
     
